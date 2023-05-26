@@ -1,0 +1,352 @@
+header
+{  
+    min-height: 100vh;
+    padding: 3rem 7% 2rem;
+    display: flex;
+    align-items: center;
+
+    .home-content
+    {
+        max-width: 44rem;
+
+        h3
+        {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: .3;
+        }
+
+        h1
+        {
+            font-size: 5.6rem;
+            font-weight: 700;
+            margin-bottom: .3rem;
+        }
+
+        ul
+        {
+            display: flex;
+            
+            li a
+            {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 4.5rem;
+                height: 4.5rem; 
+                background: transparent;
+                border: .2rem solid var(--main-color);
+                border-radius: 50%;
+                box-shadow: 0 .2rem .5rem var(--shadow-color);
+                font-size: 2rem;
+                color: var(--main-color);
+                margin: 2.5rem 1.5rem 3rem 0;
+                transition: .3 ease;
+
+                &:hover
+                {
+                    color: var(--white-color);
+                    background: var(--main-color);
+                }
+
+                
+            }
+        } 
+        
+    }
+
+    .profession-container
+    {
+        position: absolute;
+        top: 45%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 768px;
+        height: 768px;
+        background: transparent;
+        overflow: hidden;
+        pointer-events: none;
+       
+
+        .profession-box
+        {
+            position: absolute;
+            top:0;
+            right: 0;
+            transform: translateY(-50%);
+            width: 768px;
+            height: 768px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: professionRotate 10s ease-out infinite;
+            
+            .profession
+            {
+                position: absolute;
+                display: flex;
+                left: 0;
+                align-items: center;
+                flex-direction: column;
+                color: var(--main-color);
+                transform: rotate(calc(360deg / 4 * var(--i)));
+                transform-origin: 384px;
+                background: var(--bg-color);
+                padding: 13px 0;
+
+                i
+                {
+                    font-size: 3.8rem;
+                }
+
+
+                h3
+                {
+                    font-size: 3.2rem;
+                    line-height: 1;
+                    font-weight: 600;
+                }        
+            }
+            .profession:nth-child(1) i {
+                margin-right: 15px;
+            }
+            .profession:nth-child(2),
+            .profession:nth-child(4)
+            {
+                padding-bottom: 20px;
+            }
+        
+
+            .circle
+            {
+                width: 560px;
+                height: 560px;
+                border: 3px solid var(--main-color);
+                border-radius: 50%;
+            }
+        } 
+        .overlay{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-top: 384px solid var(--main-color);
+            border-right: 384px solid var(--main-color);
+            border-bottom: 384px solid var(--main-color);
+            border-left: 384px solid transparent;
+        }            
+    }
+    .home-img
+    {
+        position: absolute;
+        bottom: 6rem;
+        right: 1rem;
+        
+
+        img
+        {
+            width: 600px;
+            height: 600px;
+        }
+       
+    }
+    
+}
+
+
+/*BREAKPOINTS*/
+/*1200px*/
+
+@media (max-width:1200px) 
+{
+    header
+    {
+        .profession-container
+        {
+            height: 85.8rem;
+
+            .profession-box
+            {
+                right: -12rem;
+                height: 85.8rem;
+            }
+            .overlay{
+                right: -8rem;
+            }
+        }
+    }
+    
+}
+
+/*1024px*/
+
+@media (max-width:1024px) 
+{
+    header
+    {
+        padding: 10rem 3% 2rem;
+        .profession-container 
+        {
+            
+            .profession-box
+            {
+                right: -22rem;  
+            }
+            .overlay
+            {
+                right: -15rem;
+            }
+        }
+
+        .home-img
+        {
+            
+            bottom: 7.5rem;
+            right: 3rem;
+        
+
+            img
+            {
+                width: 350px;
+            }
+        }
+
+    }
+
+}
+
+/*991px*/
+@media (max-width:991px)
+{
+    header
+    {
+        .home-content
+        {
+            max-width: 50rem;
+        }
+
+        .profession-container {
+            .profession-box
+            {
+                right: -45rem;
+            }
+            .overlay{
+                right: -42.5rem;
+            }
+        }
+
+        .home-img img{
+            display: none;
+        }
+    }
+}
+
+/*768px*/
+@media (max-width:768px) 
+{
+    header{
+        height: 100vh;
+        padding: 15rem 3% 30rem;
+        justify-content: center;
+        text-align: center;
+        .home-content{
+            h3{
+                font-size: 2.6rem;
+            }
+            h1{
+                font-size: 5rem;
+            }
+            
+            ul{
+                justify-content: center;
+                li a{
+                    margin: 2.5rem .75rem 3rem;
+                }
+            } 
+        }
+
+        .profession-container{
+
+            left: 0;
+            width: 100%;
+            height: 100%;
+            .profession-box{
+                position: fixed;
+                top: 55%;
+                left:0;
+                border-radius: 0;
+                width: 100%;
+
+                .profession{
+                    padding: 0 13px;
+                    left: auto;
+                    transform-origin: 0;
+
+                    &:nth-child(1){
+                        transform: rotate(-90deg) translate(-120px, -340px);
+                        i{
+                            margin-right: 0;
+                        }
+                    }
+                    &:nth-child(2) {
+                        transform: rotate(0deg) translate(0,-235px);
+                        padding-bottom: 0;
+                    }
+                    &:nth-child(3){
+                        transform: rotate(90deg) translate(-115px, -350px);
+                    }
+                    &:nth-child(4) {
+                        transform: rotate(180deg) translate(-220px, -235px);
+                        padding-bottom: 0;
+                    }
+                   
+                }
+            }
+            .overlay{
+                position: fixed;
+                top: 66rem;
+                left: 50%;
+                right: 0;
+                transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
+            }
+        }
+    }
+}
+
+@media (max-width:450px) {
+    header{
+        padding: 10rem 3% 35rem;
+        height: 100vh;
+
+        .profession-box .profession:nth-child(1){
+            transform: rotate(-90deg) translate(-110px, -120px);
+        }
+
+        .profession-box .profession:nth-child(2){
+            transform: rotate(0deg) translate(5px, -235px);
+        }
+
+        .profession-box .profession:nth-child(3){
+            transform: rotate(90deg) translate(-105px, -140px);
+        }
+
+        .profession-box .profession:nth-child(4){
+            transform: rotate(180deg) translate(-210px, -235px);
+        }
+
+        .profession-container 
+        {
+            .overlay{
+                top:75rem;
+            }
+            .profession-box .circle
+            {
+                width: 400px;
+                height: 400px;
+            }
+
+        }
+    }
+}

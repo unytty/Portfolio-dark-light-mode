@@ -1,0 +1,73 @@
+.about
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    .about-img
+    {
+        width: 50%;
+
+        img{
+            width: 40vw;
+            transform: scaleX(-1);//otočí img o 180° po ose X
+        }
+    }
+
+    .about-container
+    {
+        
+        h2{
+            text-align: left;
+            line-height: 1.2;
+        }
+        h3
+        {
+            font-size: 2rem;
+        }
+        p
+        {
+            font-size: 1.6rem;
+            margin: 4rem 0 5rem;
+        }
+    }
+
+
+}
+
+/*768px*/
+@media (max-width:768px) 
+{
+    .about{
+        flex-direction: column;
+        text-align: center;
+
+        .about-container h2{
+            text-align: center;
+        }
+
+        .about-img img{
+            width: 50vw;
+            margin-top: 15rem;
+        }
+    }
+}
+
+/*450px*/
+
+@media (max-width: 450px) {
+    .about .about-img img{
+        width: 48vw;
+        margin-top: -55rem;
+    }
+}
+
+/*365px*/
+
+@media(max-width:365px){
+    .about .about-img img{
+        width: 55vw;
+        margin-bottom: 1rem;
+    }
+}
